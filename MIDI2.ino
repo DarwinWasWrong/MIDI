@@ -56,8 +56,11 @@ const byte COLS = 2; //three columns
  
 // these keys are coverted from char to ascii - 65  - so the first one MUST be A
 char keys[ROWS][COLS] = {
-  {'A', 'B', 'C', 'D', 'E'},
-  {'F', 'G', 'H', 'I', 'J'}
+  {'A', 'B'},
+  {'C', 'D'},
+  {'E', 'F'},
+  {'G', 'H'},
+  {'I', 'J'}
 };
  
 byte rowPins[ROWS] = {3, 4, 5, 6,7}; //connect to the row pinouts of the kpd
