@@ -21,7 +21,7 @@ There should be a directory called Keypad-master
   Change it with maxsequence
   we start at key zero
  
-  note then end of the sequence has to be -1 !!!
+
 */
 const int maxsequence = 3;                    // 3 codes byte channel, byte key, byte velocity
 byte keyspressedsequence[20][maxsequence] =
@@ -29,23 +29,23 @@ byte keyspressedsequence[20][maxsequence] =
   {0, MIDI_C, 127 },
   {0, MIDI_E + MIDI_FLAT + MIDI_OCTAVE, 127},
   {0, MIDI_G + MIDI_OCTAVE, 127},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1},
-  { -1}
+  {0, MIDI_G + MIDI_OCTAVE, 127},
+  {0, MIDI_A + MIDI_OCTAVE, 127},
+  {0, MIDI_B + MIDI_OCTAVE, 127},
+  {0, MIDI_C + MIDI_OCTAVE, 127},
+  {0, MIDI_D + MIDI_OCTAVE, 127},
+  {0, MIDI_E + MIDI_OCTAVE, 127},
+  {0, MIDI_F + MIDI_OCTAVE, 127},
+  {0, MIDI_G + MIDI_OCTAVE, 127},
+  {0, MIDI_A + MIDI_FLAT, 127},
+  {0, MIDI_B + MIDI_FLAT, 127},
+  {0, MIDI_D + MIDI_FLAT, 127},
+  {0, MIDI_D + MIDI_FLAT, 127},
+  {0, MIDI_E + MIDI_FLAT, 127},
+  {0, MIDI_F + MIDI_FLAT, 127},
+  {0, MIDI_G + MIDI_FLAT, 127},
+  {0, MIDI_A, 127},
+  {0, MIDI_B, 127}
 };
  
  
