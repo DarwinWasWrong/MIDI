@@ -26,20 +26,46 @@
 #endif
 
 // MIDI notes
-#define MIDI_C0            0
-#define MIDI_D0            2
-#define MIDI_E0            4
-#define MIDI_F0            5
-#define MIDI_G0            7
-#define MIDI_A0            9
-#define MIDI_B0           11
-#define MIDI_C            60
-#define MIDI_D            62
-#define MIDI_E            64
-#define MIDI_F            65
-#define MIDI_G            67
-#define MIDI_A            69
-#define MIDI_B            71
+#define MIDI_A0            21
+#define MIDI_B0            22
+
+#define MIDI_C1            24
+#define MIDI_D1            26
+#define MIDI_E1            28
+#define MIDI_F1            29
+#define MIDI_G1            31
+#define MIDI_A1            33
+#define MIDI_B1            35
+
+#define MIDI_C2            36
+#define MIDI_D2            38
+#define MIDI_E2            40
+#define MIDI_F2            41
+#define MIDI_G2            43
+#define MIDI_A2            45
+#define MIDI_B2            47
+
+
+#define MIDI_C3            48
+#define MIDI_D3            50
+#define MIDI_E3            52
+#define MIDI_F3            53
+#define MIDI_G3            55
+#define MIDI_A3            57
+#define MIDI_B3            59
+
+
+
+
+#define MIDI_C4            60
+#define MIDI_D4            62
+#define MIDI_E4            64
+#define MIDI_F4            65
+#define MIDI_G4            67
+#define MIDI_A4            69
+#define MIDI_B4            71
+
+
 #define MIDI_SHARP         1
 #define MIDI_FLAT         -1
 #define MIDI_OCTAVE       12
