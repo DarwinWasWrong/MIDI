@@ -54,9 +54,6 @@
 #define MIDI_A3            57
 #define MIDI_B3            59
 
-
-
-
 #define MIDI_C4            60
 #define MIDI_D4            62
 #define MIDI_E4            64
@@ -65,6 +62,29 @@
 #define MIDI_A4            69
 #define MIDI_B4            71
 
+#define MIDI_C5            72
+#define MIDI_D5            74
+#define MIDI_E5            76
+#define MIDI_F5            77
+#define MIDI_G5            79
+#define MIDI_A5            81
+#define MIDI_B5            83
+
+#define MIDI_C6            84
+#define MIDI_D6            86
+#define MIDI_E6            88
+#define MIDI_F6            89
+#define MIDI_G6            91
+#define MIDI_A6            93
+#define MIDI_B6            95
+
+#define MIDI_C7            96
+#define MIDI_D7            98
+#define MIDI_E7            100
+#define MIDI_F7            101
+#define MIDI_G7            103
+#define MIDI_A7            105
+#define MIDI_B7            107
 
 #define MIDI_SHARP         1
 #define MIDI_FLAT         -1
