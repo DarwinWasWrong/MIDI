@@ -26,26 +26,26 @@ There should be a directory called Keypad-master
 const int maxsequence = 3;                    // 3 codes byte channel, byte key, byte velocity
 byte keyspressedsequence[20][maxsequence] =
 {
-  {0, MIDI_C, 127 },
-  {0, MIDI_E + MIDI_FLAT + MIDI_OCTAVE, 127},
-  {0, MIDI_G + MIDI_OCTAVE, 127},
-  {0, MIDI_G + MIDI_OCTAVE, 127},
-  {0, MIDI_A + MIDI_OCTAVE, 127},
-  {0, MIDI_B + MIDI_OCTAVE, 127},
-  {0, MIDI_C + MIDI_OCTAVE, 127},
-  {0, MIDI_D + MIDI_OCTAVE, 127},
-  {0, MIDI_E + MIDI_OCTAVE, 127},
-  {0, MIDI_F + MIDI_OCTAVE, 127},
-  {0, MIDI_G + MIDI_OCTAVE, 127},
-  {0, MIDI_A + MIDI_FLAT, 127},
-  {0, MIDI_B + MIDI_FLAT, 127},
-  {0, MIDI_D + MIDI_FLAT, 127},
-  {0, MIDI_D + MIDI_FLAT, 127},
-  {0, MIDI_E + MIDI_FLAT, 127},
-  {0, MIDI_F + MIDI_FLAT, 127},
-  {0, MIDI_G + MIDI_FLAT, 127},
-  {0, MIDI_A, 127},
-  {0, MIDI_B, 127}
+  {0, MIDI_C4, 127 },
+  {0, MIDI_E4 + MIDI_FLAT + MIDI_OCTAVE, 127},
+  {0, MIDI_G4 + MIDI_OCTAVE, 127},
+  {0, MIDI_G4 + MIDI_OCTAVE, 127},
+  {0, MIDI_A3 + MIDI_OCTAVE, 127},
+  {0, MIDI_B3 + MIDI_OCTAVE, 127},
+  {0, MIDI_C3 + MIDI_OCTAVE, 127},
+  {0, MIDI_D3 + MIDI_OCTAVE, 127},
+  {0, MIDI_E3 + MIDI_OCTAVE, 127},
+  {0, MIDI_F3 + MIDI_OCTAVE, 127},
+  {0, MIDI_G3 + MIDI_OCTAVE, 127},
+  {0, MIDI_A2 + MIDI_FLAT, 127},
+  {0, MIDI_B2 + MIDI_FLAT, 127},
+  {0, MIDI_D2 + MIDI_FLAT, 127},
+  {0, MIDI_D2 + MIDI_FLAT, 127},
+  {0, MIDI_E2 + MIDI_FLAT, 127},
+  {0, MIDI_F2 + MIDI_FLAT, 127},
+  {0, MIDI_G2 + MIDI_FLAT, 127},
+  {0, MIDI_A3, 127},
+  {0, MIDI_B3, 127}
 };
  
  
