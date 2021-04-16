@@ -51,19 +51,17 @@ byte keyspressedsequence[20][maxsequence] =
  
  
  
-const byte ROWS = 4; //four rows
-const byte COLS = 3; //three columns
+const byte ROWS = 5; //four rows
+const byte COLS = 2; //three columns
  
 // these keys are coverted from char to ascii - 65  - so the first one MUST be A
 char keys[ROWS][COLS] = {
-  {'A', 'B', 'C'},
-  {'D', 'E', 'F'},
-  {'G', 'H', 'I'},
-  {'J', 'K', 'L'}
+  {'A', 'B', 'C', 'D', 'E'},
+  {'F', 'G', 'H', 'I', 'J'}
 };
  
-byte rowPins[ROWS] = {7, 2, 3, 5}; //connect to the row pinouts of the kpd
-byte colPins[COLS] = {6, 8, 4};    //connect to the column pinouts of the kpd
+byte rowPins[ROWS] = {3, 4, 5, 6,7}; //connect to the row pinouts of the kpd
+byte colPins[COLS] = {13, 12,};    //connect to the column pinouts of the kpd
 int codeIndex;                     // the index to the keyspressedsequence
 String msg;
 Keypad kpd = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
