@@ -95,7 +95,7 @@ void keyEventListener(char key, KeyState kpadState)
             Serial.print(msg );
       #endif
       //   byte channel, byte key, byte velocity
-      midi_note_on(keyspressedsequence[codeIndex][0],keyspressedsequence[codeIndex][1],keyspressedsequence[codeIndex][1]);
+      midi_note_on(keyspressedsequence[codeIndex][0],keyspressedsequence[codeIndex][1],keyspressedsequence[codeIndex][2]);
             #ifdef DEBUGKEYS
             Serial.println();
             Serial.print(keyspressedsequence[codeIndex][0],DEC);
