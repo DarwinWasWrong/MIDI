@@ -21,10 +21,10 @@ There should be a directory called Keypad-master
   Change it with maxsequence
   we start at key zero
  
-
 */
 const int maxsequence = 3;                    // 3 codes byte channel, byte key, byte velocity
-byte keyspressedsequence[20][maxsequence] =
+                                              // 99 in first position disables
+byte keysPRESSEDsequence[20][maxsequence] =
 {
   {0, MIDI_C4, 127 },
   {0, MIDI_E4 + MIDI_FLAT + MIDI_OCTAVE, 127},
@@ -47,10 +47,81 @@ byte keyspressedsequence[20][maxsequence] =
   {0, MIDI_A3, 127},
   {0, MIDI_B3, 127}
 };
- 
- 
- 
- 
+
+ // 99 in first position disables
+ byte keysHELDsequence[20][maxsequence] =
+{
+  {0, MIDI_B3 + MIDI_OCTAVE, 127 },
+  {99, MIDI_E4 + MIDI_FLAT + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_A3 + MIDI_OCTAVE, 127},
+  {99, MIDI_B3 + MIDI_OCTAVE, 127},
+  {99, MIDI_C3 + MIDI_OCTAVE, 127},
+  {99, MIDI_D3 + MIDI_OCTAVE, 127},
+  {99, MIDI_E3 + MIDI_OCTAVE, 127},
+  {99, MIDI_F3 + MIDI_OCTAVE, 127},
+  {99, MIDI_G3 + MIDI_OCTAVE, 127},
+  {99, MIDI_A2 + MIDI_FLAT, 127},
+  {99, MIDI_B2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_E2 + MIDI_FLAT, 127},
+  {99, MIDI_F2 + MIDI_FLAT, 127},
+  {99, MIDI_G2 + MIDI_FLAT, 127},
+  {99, MIDI_A3, 127},
+  {99, MIDI_B3, 127}
+};
+
+ // 99 in first position disables
+ byte keysRELEASEDsequence[20][maxsequence] =
+{
+  {0, MIDI_G3 + MIDI_OCTAVE, 127 },
+  {99, MIDI_E4 + MIDI_FLAT + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_A3 + MIDI_OCTAVE, 127},
+  {99, MIDI_B3 + MIDI_OCTAVE, 127},
+  {99, MIDI_C3 + MIDI_OCTAVE, 127},
+  {99, MIDI_D3 + MIDI_OCTAVE, 127},
+  {99, MIDI_E3 + MIDI_OCTAVE, 127},
+  {99, MIDI_F3 + MIDI_OCTAVE, 127},
+  {99, MIDI_G3 + MIDI_OCTAVE, 127},
+  {99, MIDI_A2 + MIDI_FLAT, 127},
+  {99, MIDI_B2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_E2 + MIDI_FLAT, 127},
+  {99, MIDI_F2 + MIDI_FLAT, 127},
+  {99, MIDI_G2 + MIDI_FLAT, 127},
+  {99, MIDI_A3, 127},
+  {99, MIDI_B3, 127}
+}; 
+
+// 99 in first position disables
+  byte keysIDLEsequence[20][maxsequence] =
+{
+  {0, MIDI_B3, 127 },
+  {99, MIDI_E4 + MIDI_FLAT + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_G4 + MIDI_OCTAVE, 127},
+  {99, MIDI_A3 + MIDI_OCTAVE, 127},
+  {99, MIDI_B3 + MIDI_OCTAVE, 127},
+  {99, MIDI_C3 + MIDI_OCTAVE, 127},
+  {99, MIDI_D3 + MIDI_OCTAVE, 127},
+  {99, MIDI_E3 + MIDI_OCTAVE, 127},
+  {99, MIDI_F3 + MIDI_OCTAVE, 127},
+  {99, MIDI_G3 + MIDI_OCTAVE, 127},
+  {99, MIDI_A2 + MIDI_FLAT, 127},
+  {99, MIDI_B2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_D2 + MIDI_FLAT, 127},
+  {99, MIDI_E2 + MIDI_FLAT, 127},
+  {99, MIDI_F2 + MIDI_FLAT, 127},
+  {99, MIDI_G2 + MIDI_FLAT, 127},
+  {99, MIDI_A3, 127},
+  {99, MIDI_B3, 127}
+};
 const byte ROWS = 5; //four rows
 const byte COLS = 2; //three columns
  
@@ -95,36 +166,81 @@ void keyEventListener(char key, KeyState kpadState)
             Serial.print(msg );
       #endif
       //   byte channel, byte key, byte velocity
-      midi_note_on(keyspressedsequence[codeIndex][0],keyspressedsequence[codeIndex][1],keyspressedsequence[codeIndex][2]);
+      if (keysPRESSEDsequence[codeIndex][0] != 99)
+      {
+      midi_note_on(keysPRESSEDsequence[codeIndex][0],keysPRESSEDsequence[codeIndex][1],keysPRESSEDsequence[codeIndex][2]);
             #ifdef DEBUGKEYS
             Serial.println();
-            Serial.print(keyspressedsequence[codeIndex][0],DEC);
+            Serial.print(keysPRESSEDsequence[codeIndex][0],DEC);
             Serial.println();
-            Serial.print(keyspressedsequence[codeIndex][1],DEC);
+            Serial.print(keysPRESSEDsequence[codeIndex][1],DEC);
             Serial.println();
-            Serial.print(keyspressedsequence[codeIndex][2],DEC);
+            Serial.print(keysPRESSEDsequence[codeIndex][2],DEC);
             Serial.println();
       #endif
+      }
       break;
     
     
     case HOLD:
-      msg = " HOLD.";
-                          #ifdef DEBUGKEYS
-                                Serial.print(msg );
-                          #endif
+msg = " HELD ";
+      #ifdef DEBUGKEYS
+            Serial.print(msg );
+      #endif
+      //   byte channel, byte key, byte velocity
+      if (keysHELDsequence[codeIndex][0] != 99)
+      {
+      midi_note_on(keysHELDsequence[codeIndex][0],keysHELDsequence[codeIndex][1],keysHELDsequence[codeIndex][2]);
+            #ifdef DEBUGKEYS
+            Serial.println();
+            Serial.print(keysHELDsequence[codeIndex][0],DEC);
+            Serial.println();
+            Serial.print(keysHELDsequence[codeIndex][1],DEC);
+            Serial.println();
+            Serial.print(keysHELDsequence[codeIndex][2],DEC);
+            Serial.println();
+      #endif
+      }
       break;
+      
     case RELEASED:
       msg = " RELEASED.";
-                          #ifdef DEBUGKEYS
-                                Serial.print(msg );
-                          #endif
+      #ifdef DEBUGKEYS
+            Serial.print(msg );
+      #endif
+      //   byte channel, byte key, byte velocity
+      if (keysRELEASEDsequence[codeIndex][0] != 99)
+      {
+      midi_note_on(keysRELEASEDsequence[codeIndex][0],keysRELEASEDsequence[codeIndex][1],keysRELEASEDsequence[codeIndex][2]);
+            #ifdef DEBUGKEYS
+            Serial.println();
+            Serial.print(keysRELEASEDsequence[codeIndex][0],DEC);
+            Serial.println();
+            Serial.print(keysRELEASEDsequence[codeIndex][1],DEC);
+            Serial.println();
+            Serial.print(keysRELEASEDsequence[codeIndex][2],DEC);
+            Serial.println();
+      #endif
+      }
       break;
     case IDLE:
-      msg = " IDLE.";
-                          #ifdef DEBUGKEYS
-                                Serial.print(msg );
-                          #endif
+      #ifdef DEBUGKEYS
+            Serial.print(msg );
+      #endif
+      //   byte channel, byte key, byte velocity
+      if (keysIDLEsequence[codeIndex][0] != 99)
+      {
+      midi_note_on(keysIDLEsequence[codeIndex][0],keysIDLEsequence[codeIndex][1],keysIDLEsequence[codeIndex][2]);
+            #ifdef DEBUGKEYS
+            Serial.println();
+            Serial.print(keysIDLEsequence[codeIndex][0],DEC);
+            Serial.println();
+            Serial.print(keysIDLEsequence[codeIndex][1],DEC);
+            Serial.println();
+            Serial.print(keysIDLEsequence[codeIndex][2],DEC);
+            Serial.println();
+      #endif
+      }
       break;
   }
 }
