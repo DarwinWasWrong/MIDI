@@ -224,6 +224,7 @@ msg = " HELD ";
       }
       break;
     case IDLE:
+    msg = " Idle";
       #ifdef DEBUGKEYS
             Serial.print(msg );
       #endif
